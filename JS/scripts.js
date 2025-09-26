@@ -24,11 +24,16 @@ function Calcular(){
              resultado =   n1 * n2
                 break;
             case "/":
-             resultado =   n1 / n2
-                break;
+                if (n2 === 0) {
+                    pResultado.innerText = "No se puede dividir entre 0";
+                    pResultado.style = "color: red";
+                    return;
+                }
+                 resultado = n1 / n2;
+                 break;
         }
         pResultado.innerText = "=" + resultado
-        pResultado.style = "Color: blue";
+        pResultado.style = "Color: #00ff99";
     } else {
         pResultado.innerText = "Resultado imposible";
         pResultado.style = "color: red";
